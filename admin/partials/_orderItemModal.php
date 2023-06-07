@@ -41,7 +41,6 @@
                                     while($myrow = mysqli_fetch_assoc($myresult)){
                                         $pizzaId = $myrow['pizzaId'];
                                         $itemQuantity = $myrow['itemQuantity'];
-                                        
                                         $itemsql = "SELECT * FROM `pizza` WHERE pizzaId = $pizzaId";
                                         $itemresult = mysqli_query($conn, $itemsql);
                                         $itemrow = mysqli_fetch_assoc($itemresult);

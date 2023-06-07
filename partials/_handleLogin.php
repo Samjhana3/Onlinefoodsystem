@@ -19,11 +19,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             exit();
         } 
         else{
-            header("location: /OnlinePizzaDelivery/index.php?loginsuccess=false");
+            header("location: /OnlinePizzaDelivery/index.php?loginsuccess=true");
         }
     } 
     else{
-        header("location: /OnlinePizzaDelivery/index.php?loginsuccess=false");
+        header("location: /OnlinePizzaDelivery/index.php?loginsuccess=true");
     }
 }    
 ?>

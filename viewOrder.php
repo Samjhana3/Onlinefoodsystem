@@ -175,7 +175,7 @@
                             $amount = $row['amount'];
                             $orderDate = $row['orderDate'];
                             $paymentMode = $row['paymentMode'];
-                            if($paymentMode == 0) {
+                            if($paymentMode == 1) {
                                 $paymentMode = "Cash on Delivery";
                             }
                             else {

@@ -14,7 +14,7 @@
                     <b><label for="address">Address:</label></b>
                     <input class="form-control" id="address" name="address" placeholder="" type="text" required minlength="3" maxlength="500">
                 </div>
-                <div class="form-group">
+               <div class="form-group">
                     <b><label for="address1">Address Line 2:</label></b>
                     <input class="form-control" id="address1" name="address1" placeholder="" type="text">
                 </div>
@@ -25,13 +25,16 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon">+977</span>
                         </div>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="" required pattern="[0-9]{10}" maxlength="10">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="number" required pattern="[0-9]{10}" maxlength="10">
                         </div>
                     </div>
-                    <div class="form-group col-md-6 mb-0">
+
+                    
+                   <div class="form-group col-md-6 mb-0">
                         <b><label for="zipcode">Zip Code:</label></b>
                         <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="" required pattern="[0-9]{6}" maxlength="6">                    
                     </div>
+
                 </div>
                 <div class="form-group">
                     <b><label for="password">Password:</label></b>    

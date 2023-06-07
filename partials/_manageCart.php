@@ -74,6 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </script>';
                     exit();
             }
+           
         } 
         else{
             echo '<script>alert("Incorrect Password! Please enter correct Password.");
@@ -89,6 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $updatesql = "UPDATE `viewcart` SET `itemQuantity`='$qty' WHERE `pizzaId`='$pizzaId' AND `userId`='$userId'";
         $updateresult = mysqli_query($conn, $updatesql);
     }
+
     
 }
 ?>

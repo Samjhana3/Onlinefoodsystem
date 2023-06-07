@@ -23,8 +23,7 @@
                     <th>Phone No</th>
                     <th>Amount</th>						
                     <th>Payment Mode</th>
-                    <th>Order Date</th>
-                    <?php //<th>Order Status</th>	?>				
+                    <th>Order Date</th>				
                     <th>Items</th>
                 </tr>
             </thead>
@@ -43,7 +42,7 @@
                         $orderDate = $row['orderDate'];
                         $paymentMode = $row['paymentMode'];
 
-                        if($paymentMode == 0) {
+                        if($paymentMode == 1) {
                             $paymentMode = "Cash on Delivery";
                         }
                         else {
@@ -141,10 +140,10 @@
         width: 80px;
     }
     table.table-striped tbody tr:nth-of-type(odd) {
-        /* background-color: #fcfcfc; */
+        background-color: #fcfcfc; 
     }
     table.table-striped.table-hover tbody tr:hover {
-        /* background: #f5f5f5; */
+        background: #f5f5f5; 
     }
     table.table th i {
         font-size: 13px;

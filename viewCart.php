@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
     <title>Cart</title>
     <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon">
     <style>
@@ -26,7 +27,7 @@
     <div class="container" id="cont">
         <div class="row">
             <div class="alert alert-info mb-0" style="width: -webkit-fill-available;">
-              <strong>Info!</strong> online payment are currently disabled so please choose cash on delivery.
+              <strong>Info!</strong> Please choose online payment
             </div>
             <div class="col-lg-12 text-center border rounded bg-light my-3">
                 <h1>My Cart</h1>
@@ -109,33 +110,36 @@
                                 <span><strong>Rs. <?php echo $totalPrice ?></strong></span>
                             </li>
                         </ul>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Cash On Delivery 
+                         <div class="form-check"> 
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" disabled> 
+                            <label class="form-check-label" for="flexRadioDefault1"> 
+                                Cash On Delivery  
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" disabled>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" abled>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Online Payment 
                             </label>
-                        </div><br>
+                            <a href="#" data-amount='<?php echo $totalPrice ?>' id='payment-button-1' class="btn btn-primary pay-khalti">Pay with Khalti</a>
+                            </div>
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#checkoutModal">go to checkout</button>
+                        </div>
+
                     </div>
                 </div>
-                <div class="mb-3">
-                    <div class="pt-4">
-                        <a class="dark-grey-text d-flex justify-content-between" style="text-decoration: none; color: #050607;" data-toggle="collapse" href="#collapseExample"
-                            aria-expanded="false" aria-controls="collapseExample">
-                            Add a discount code (optional)
-                            <span><i class="fas fa-chevron-down pt-1"></i></span>
-                        </a>
-                        <div class="collapse" id="collapseExample">
-                            <div class="mt-3">
-                                <div class="md-form md-outline mb-0">
-                                    <input type="text" id="discount-code" class="form-control font-weight-light"
-                                    placeholder="Enter discount code">
+                <!-- <div class="mb-3"> -->
+                    <!-- <div class="pt-4"> -->
+                        <!-- <a class="dark-grey-text d-flex justify-content-between" style="text-decoration: none; color: #050607;" data-toggle="collapse" href="#collapseExample" -->
+                            <!-- aria-expanded="false" aria-controls="collapseExample"> -->
+                            <!-- Add a discount code (optional) -->
+                            <!-- <span><i class="fas fa-chevron-down pt-1"></i></span> -->
+                        <!-- </a> -->
+                        <!-- <div class="collapse" id="collapseExample"> -->
+                            <!-- <div class="mt-3"> -->
+                                <!-- <div class="md-form md-outline mb-0"> -->
+                                    <!-- <input type="text" id="discount-code" class="form-control font-weight-light" -->
+                                    <!-- placeholder="Enter discount code"> -->
                                 </div>
                             </div>
                         </div>
@@ -180,5 +184,21 @@
             })
         }
     </script>
+
+<script src="khalti-client.js" type="text/javascript"></script>
+<!-- <link rel="stylesheet" href="https://rawgit.com/google/code-prettify/master/styles/sons-of-obsidian.css" /> -->
+<script type="text/javascript">
+    $(function(){
+        // just show the live js here.
+        $.ajax({url: "khalti-client.js", success: function(resp){
+            $("#js-code-here").text(resp.trim());
+            addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+        }, dataType: 'html'});
+        $.get({url: "example.js", success: function(resp){
+            $("#js-example-here").text(resp.trim());
+            addEventListener('load', function(event) { PR.prettyPrint(); }, false);
+        }, dataType: 'html'});
+    });
+</script>
 </body>
 </html>

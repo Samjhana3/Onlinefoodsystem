@@ -149,9 +149,9 @@
                           $passSql = "SELECT * FROM users WHERE id='$userId'"; 
                           $passResult = mysqli_query($conn, $passSql);
                           $passRow=mysqli_fetch_assoc($passResult);
-                          $email = $passRow['email'];
+                         $email = $passRow['email'];
                           $phone = $passRow['phone'];
-                          
+                      
                       ?>
                       
                       <form action="partials/_manageContactUs.php" method="POST">
@@ -199,7 +199,7 @@
                           <?php }else { ?>
                             <div class="col-lg-12">
                               <button type="submit" class="btn btn-danger-gradiant mt-3 text-white border-0 py-2 px-3" disabled><span> SUBMIT NOW <i class="ti-arrow-right"></i></span></button>
-                              <small class="form-text text-muted">First login to Contct with Us.</small>
+                              <small class="form-text text-muted">First login to Contact with Us.</small>
                             </div>
                           <?php } ?>
                         </div>

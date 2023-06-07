@@ -93,20 +93,20 @@ CREATE TABLE `orders` (
 -- Table structure for table `pizza`
 --
 
-CREATE TABLE `pizza` (
-  `pizzaId` int(12) NOT NULL,
-  `pizzaName` varchar(255) NOT NULL,
-  `pizzaPrice` int(12) NOT NULL,
-  `pizzaDesc` text NOT NULL,
-  `pizzaCategorieId` int(12) NOT NULL,
-  `pizzaPubDate` datetime NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `food` (
+  `Id` int(12) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Price` int(12) NOT NULL,
+  `Desc` text NOT NULL,
+  `CategorieId` int(12) NOT NULL,
+  `PubDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pizza`
 --
 
-INSERT INTO `pizza` (`pizzaId`, `pizzaName`, `pizzaPrice`, `pizzaDesc`, `pizzaCategorieId`, `pizzaPubDate`) VALUES
+INSERT INTO `food` (`Id`, `Name`, `Price`, `Desc`, `CategorieId`, `PubDate`) VALUES
 (1, 'Margherita', 99, 'A hugely popular margherita, with a deliciously tangy single cheese topping\r\n\r\n', 1, '2021-03-17 21:03:26'),
 (2, 'Double Cheese Margherita', 199, 'The ever-popular Margherita - loaded with extra cheese... oodies of it', 1, '2021-03-17 21:20:58'),
 (3, 'Farm House\r\n', 149, 'A pizza that goes ballistic on veggies! Check out this mouth watering overload of crunchy, crisp capsicum, succulent mushrooms and fresh tomatoes\r\n\r\n', 1, '2021-03-17 21:22:07'),
